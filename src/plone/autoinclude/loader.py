@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+
 from importlib.metadata import distribution
 from pkg_resources import iter_entry_points
-=======
->>>>>>> 10ec659 (Fix an error when loading namespace packages)
 from pkg_resources import resource_filename
 from pkg_resources import working_set
 from zope.configuration.xmlconfig import include
@@ -71,13 +69,10 @@ def load_z3c_packages(target=""):
         module_name = ep.dist.name
         if target and module_name != target:
             continue
-<<<<<<< HEAD
+
         # We should always be able to get the distribution.
         # Otherwise: how could we have an entry point?
         module_name = _get_module_name_from_project_name(ep.dist.project_name)
-=======
-
->>>>>>> 10ec659 (Fix an error when loading namespace packages)
         if module_name not in _known_module_names:
             try:
                 module = importlib.import_module(module_name)
